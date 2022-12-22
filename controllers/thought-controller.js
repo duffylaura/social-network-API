@@ -9,3 +9,5 @@
 
 // createReaction,
 // deleteReaction,
+
+import {Thought} from '../models/thought';
