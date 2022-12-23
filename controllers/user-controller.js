@@ -8,6 +8,7 @@
 // deleteFriend
 
 import {User} from '../models/user';
+import {Thought} from '../models/thought';
 
 module.exports = {
     getUsers(req, res) {
@@ -38,11 +39,14 @@ module.exports = {
         .catch((err)=>res.status(500).json(err)); 
     },
 
+    //Add in "Bonus" feature, of when you delete a User, delete their Thoughts
     deleteUserById(req, res){
         User.findOneAndDelete({_id: req.params.userId})
         .then((user) => !user ? res.status(404).json({ message: 'There is no user with this ID.' })
-            : res.json("User has been deleted."))
-        .catch((err)=>res.status(400).json(err));
+            : Thought.deleteMany({_id:{$in: user.thoughts}}))
+           // : res.json("User has been deleted."))
+        .then(()=>res.json("User and their Thoughts have been deleted!"))
+        .catch((err)=>res.status(500).json(err));
     },
 
     addFriend(req, res){
