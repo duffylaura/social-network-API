@@ -15,7 +15,7 @@ This application focuses on the backend for a social network and therefore has n
 - [License](#license)
 
 ## Model Overview 
-In order to understand how to use this application, it is important to have an overview of the models. This API includes three schema: User, Thought, and Reaction. Of the three schema, User and Thought are also models. Below is a visualization of the models the developer made with a free trial of [Moon Modeler](https://www.datensen.com/blog/docs/mongoose-schema-design/). 
+In order to understand how to use this application, it is important to have an overview of the models. This API includes three schema: User, Thought, and Reaction. Of the three schema, User and Thought are also models. Below is a visualization of the schema. The developer made this database diagram using a free trial of [Moon Modeler](https://www.datensen.com/blog/docs/mongoose-schema-design/). 
 
 <img width="1072" alt="database" src="https://user-images.githubusercontent.com/112783308/209281507-18f014ac-a906-45ab-9777-288eeb3a812a.png">
 
