@@ -21,11 +21,11 @@
 * Then enter `node server.js`
 
 ## Usage
-After entering `node server.js` in your CLI. You should get a notification like the one below, telling you the server is now listening. 
+After entering `node server.js` in your CLI, you should get a notification like this:  
 
 <img width="973" alt="now-listening" src="https://user-images.githubusercontent.com/112783308/209273088-921ba36e-a611-4ff2-a3e9-5bc1ca2276cd.png">
 
-Now that the server is listening, you'll want to open Insomnia and enter the following:
+Now that you know the server is listening, you'll want to open Insomnia and enter the following:
 
 <img width="715" alt="insomnia" src="https://user-images.githubusercontent.com/112783308/209273258-40b41500-3f16-40c2-b89a-b4040ab16122.png">
 
