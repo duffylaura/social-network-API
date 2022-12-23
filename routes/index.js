@@ -7,7 +7,7 @@ const apiRoutes = require('./api');
 router.use('/api', apiRoutes);
 
 // Wildcard routes (i.e. routes that don't start with /api)
-router.use((req, res)=>{res.status(404).send('This route does not exist! Must start with /api!!')});
+router.use((req, res)=>{res.status(404).send('This route does not exist! Make sure you start with /api!!')});
 
 
 module.exports = router;

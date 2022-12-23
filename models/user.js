@@ -1,5 +1,4 @@
 const { Schema, model, Types } = require('mongoose');
-import { isEmail } from 'validator';
 
 // Schema to create User model
 const userSchema = new Schema(
@@ -10,27 +9,26 @@ const userSchema = new Schema(
       required: true,
       trim: true, 
     },
+
     email: {
       type: String,
       required: true,
-      unique: true, 
-      validate: [isEmail, 'invalid email'],
+      unique: true,
+      // match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/],
     },
+
     thoughts: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Thought',
+            ref: 'thought',
         },
     ],
     friends: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'User',
+            ref: 'user',
         },
     ],
-    friendCount: {
-        type: Number, 
-    },
   },
   {
     toJSON: {

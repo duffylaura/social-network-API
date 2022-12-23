@@ -1,6 +1,7 @@
 const { Schema, model, Types } = require('mongoose');
 const dayjs = require("dayjs");
-import reactionSchema from './reaction';
+
+const reactionSchema = require('./reaction');
 
 // Schema to create Thought model
 const thoughtSchema = new Schema(
@@ -8,8 +9,8 @@ const thoughtSchema = new Schema(
     thoughtText: {
       type: String,
       required: true,
-      maxlength: 1,
-      minlength: 280, 
+      maxlength: 280,
+      minlength: 1, 
     },
     createdAt: {
         type: Date,
@@ -24,9 +25,6 @@ const thoughtSchema = new Schema(
         required: true, 
     },
     reactions: [reactionSchema],
-    reactionCount: {
-        type: Number, 
-    }
   },
   {
     toJSON: {

@@ -1,7 +1,15 @@
 {
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "dayjs": "^1.11.7",
     "express": "^4.18.2",
-    "mongoose": "^6.8.1"
-  }
+    "mongoose": "^6.8.1",
+    "nodemon": "^2.0.20"
+  }, 
+  "author": "Laura Duffy", 
+  "license": "MIT"
 }

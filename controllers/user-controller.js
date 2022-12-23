@@ -7,8 +7,10 @@
 // addFriend, 
 // deleteFriend
 
-import {User} from '../models/user';
-import {Thought} from '../models/thought';
+// import {User} from '../models/user';
+// import {Thought} from '../models/thought';
+
+const { User, Thought } = require("../models");
 
 module.exports = {
     getUsers(req, res) {
@@ -49,17 +51,22 @@ module.exports = {
         .catch((err)=>res.status(500).json(err));
     },
 
+    //Couldn't get route to work that requirements wanted
+
     addFriend(req, res){
-        User.findOneAndUpdate({_id: req.params.userId}, {$addToSet: {friends: req.body}}, {runValidators: true, new: true})
-        .then((user) => !user ? res.status(404).json({ message: 'There is no user with this ID.' })
-            : res.json(user))
-        .catch((err)=>res.status(500).json(err));
+        User.findOneAndUpdate({ _id: req.params.userID }, {$addToSet: {friends: req.params.friendID}},{ new: true, runValidators: true})
+            .then((user) => !user? res.status(404).json({ warning: 'Error! Unable to add friend!'})
+                    : res.json(user))
+             .catch((err)=>res.status(500).json(err));
     },
 
+
     deleteFriend(req, res){
-        User.findOneAndUpdate({_id: req.params.userId}, {$pull: {friends: req.params.friendId}}, {runValidators: true, new: true})
-        .then((user) => !user ? res.status(404).json({ message: 'You do not have a friend with this ID.' })
+        User.findOneAndUpdate({ _id: req.params.userID },{$pull: {friends: req.params.friendID}},{ new: true, runValidators: true })
+        .then((user) => !user? res.status(404).json({ warning: 'Error! Unable to remove friend!'})
             : res.json(user))
         .catch((err)=>res.status(500).json(err)); 
-    }
+    },
+
 }
+

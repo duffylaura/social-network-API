@@ -10,7 +10,9 @@
 // createReaction,
 // deleteReaction,
 
-import {Thought} from '../models/thought';
+//import {Thought} from '../models/thought';
+
+const { Thought } = require("../models");
 
 module.exports = {
 
@@ -28,7 +30,7 @@ module.exports = {
         });
     },
 
-    getThoughById(req,res){
+    getThoughtById(req,res){
         Thought.findOne({_id: req.params.thoughtId})
         .then((thought) => !thought ? res.status(404).json({ message: 'There is no thought with this ID.' })
             : res.json(thought))
@@ -36,7 +38,7 @@ module.exports = {
     },
 
     updateThoughtById(req,res){
-        Thought.findOneAndUpdate({_id: req.params.thoughtId})
+        Thought.findOneAndUpdate({_id: req.params.thoughtId}, req.body,{new:true, runValidators:true})
         .then((thought) => !thought ? res.status(404).json({ message: 'There is no thought with this ID.' })
             : res.json(thought))
         .catch((err) => res.status(500).json(err));
