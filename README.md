@@ -1,6 +1,9 @@
 # Social Network API 
 
 ## Description 
+This project is an API for a social network application where users can share their thoughts, react to friends' thoughts, and create a friend list. Express.js was used for routing, MongoDB was used for the database, and Mongoose was used for the ODM. The developer also used the [`dayjs npm package`](https://www.npmjs.com/package/dayjs) to format timestamps on thoughts and reactions.
+
+This application focuses on the backend for a social network and therefore has not been deployed. It can be installed following the instructions below and using Insomnia. A walkthrough video demonstrating this social network's API can also be viewed [here](https://www.youtube.com/watch?v=fLcVQs4J714).
 
 ## Table of Contents 
 - [Description](#description)
@@ -12,6 +15,9 @@
 - [License](#license)
 
 ## Model Overview 
+In order to understand how to use this application, it is important to have an overview of the models. This API includes three schema: User, Thought, and Reaction. Of the three schema, User and Thought are also models. Below is a visualization of the models the developer made with a free trial of [Moon Modeler](https://www.datensen.com/blog/docs/mongoose-schema-design/). 
+
+<img width="1072" alt="database" src="https://user-images.githubusercontent.com/112783308/209281507-18f014ac-a906-45ab-9777-288eeb3a812a.png">
 
 ## Installation 
 * `git clone` this repository 
