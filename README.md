@@ -29,11 +29,15 @@ Now that the server is listening, you'll want to open Insomnia and enter the fol
 
 <img width="715" alt="insomnia" src="https://user-images.githubusercontent.com/112783308/209273258-40b41500-3f16-40c2-b89a-b4040ab16122.png">
 
-Note that this backend is not seeded! So, if you begin with a get request of all users, you won't see anything right away. Start creating your social network by making a post request and creating a username and entering your email. 
-
 You can now run all CRUD operations (create, read, update, delete) using your Insomnia tool. For example, here is a gif going through some of the GET routes. 
 
 ![get-routes](https://user-images.githubusercontent.com/112783308/209273916-6da87047-6697-4d8b-911d-ea74245be2ba.gif)
+
+Note that this backend is not seeded! So, if you begin with a get request of all users, you won't see anything right away. Start by making a post request: Create a username, enter your email, and then hit send! For example: 
+
+<img width="618" alt="post-request" src="https://user-images.githubusercontent.com/112783308/209276080-52319c52-215c-47a5-8cc4-80f647cd25a2.png">
+
+Now you have begun creating the backend for your social network! 
 
 For further assistance on how to use Insomnia with this application, please view [this demo video](https://www.youtube.com/watch?v=fLcVQs4J714).
 
@@ -45,7 +49,7 @@ Both models make use of similar virtuals. In the User model, there is a virtual 
 
 Virtuals are interesting because they are not included in the model's schema's properties (i.e. the properties in the Thought schema are *thoughtText*, *createdAt*, *username*, *reactions*). In Mongoose, a virtual is a property that is **not** stored in MongoDB. 
 
-Virtuals are used to compute properties on documents, such as in these models we are using virtuals to output the length of the friend or reaction array. 
+Virtuals are used to compute properties on documents. In this instance, we are using virtuals to output the length of the friend or reaction array. 
 
 <img width="478" alt="reaction count on insomnia" src="https://user-images.githubusercontent.com/112783308/209275030-4f61d2b9-48f6-44ba-886e-ee1084ceebe8.png">
 
